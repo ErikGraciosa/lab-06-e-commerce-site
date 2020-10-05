@@ -5,7 +5,8 @@
 */
 
 *{
-    box-sizing: border-box;
+	box-sizing: border-box;
+	border: black solid 1px; /*change back to zero*/
 }
 
 html, body {
@@ -28,7 +29,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border: black solid 1px; /*change back to zero*/
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;

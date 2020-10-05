@@ -72,6 +72,43 @@ h2 {
     font-weight: bold;
 }
 
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr .5fr;
+    height: 150px;    
+}
+
+.product-middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.product-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.description {
+    width: 200%
+}
+
+.price {
+    font-size: 18pt;
+    font-weight: 900;
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-self: end;
+}
+
+button {
+    grid-column: 2;
+    grid-row: 1;
+    height: 50%;
+}
+
 .gutter-right {
     margin-right: 20px;
 }
@@ -84,7 +121,9 @@ header img {
     height: var(--header-height);
 }
 
-
+img {
+    height: 100%;
+}
 
 content {
     width: 80%;
@@ -92,6 +131,7 @@ content {
 
 p {
     margin: var(--gutter);
+    height: 150px;
 }
   
 footer {
