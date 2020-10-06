@@ -12,7 +12,7 @@ const bat = {
 const mitt = {
     id: 'mitt',
     name: 'Baseball Mitt',
-    image: '../assets/baseballmitt.png',
+    image: '../assets/mitt.png',
     category: 'Baseball',
     description: 'Leather Outfielders Mitt',
     price: 40.00,

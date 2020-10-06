@@ -1,23 +1,11 @@
 
 body {
-    --color1: #ffffff;
-    --color2: #ffffff;
-    --color3: #ffffff;
-    --color4: #ffffff;
-    --color5: #ffffff;
+    --color1: #c4ced4;
+    --color2: #002878;
+    --color3: #005c5c;
+    --color4: #ffc528;
+    --color5: #fff6dd;
 
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -34,10 +22,11 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
-}
+    background-color: var(--color2);
+    }
 
 section {
-    background-color: var(--color5);
+    background-color: var(--color3);
     width: 1000px;
     max-width: 80%;
     display: flex;
@@ -48,13 +37,26 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    border: solid 5px var(--color1);
+    border-radius: 5px;
+    box-shadow: 5px 10px 8px black;
+}
+
+li, content {
+    padding: 10px;
+}
+
+li {
+    border: solid var(--color4) 5px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px black;
+    margin-bottom: 15px;
 }
 
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: var(--color2);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
@@ -62,7 +64,7 @@ header {
 footer {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: var(--color2);
     box-shadow: var(--shadow);
 }
 
@@ -76,6 +78,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1.5fr .5fr;
     height: 150px;    
+    background-color: var(--color1);
 }
 
 .product-middle {
@@ -107,6 +110,8 @@ button {
     grid-column: 2;
     grid-row: 1;
     height: 50%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
 }
 
 .gutter-right {
@@ -124,9 +129,18 @@ header img {
 img {
     height: 100%;
     justify-self: center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
 }
 
+/* Controlling widths of the list items */
 content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
     width: 80%;
 }
 
@@ -135,6 +149,14 @@ p {
     height: 150px;
 }
   
+.gutter-right {
+    background-color: var(--color5);
+}
+
+#sample {
+    display: none;
+}
+
 footer {
     position: fixed;
     width: 100%;
@@ -142,7 +164,7 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: var(--color2);
     box-shadow: var(--shadow);
 }
   

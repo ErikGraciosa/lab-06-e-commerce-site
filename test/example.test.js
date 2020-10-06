@@ -1,5 +1,5 @@
 // IMPORT MODULES under test here:
-import { productHtmlBuilder } from '../app.js';
+import { productHtmlBuilder } from '../functions.js';
 
 const test = QUnit.test;
 
