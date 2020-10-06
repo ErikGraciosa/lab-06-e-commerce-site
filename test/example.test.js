@@ -1,5 +1,6 @@
 // IMPORT MODULES under test here:
 import { productHtmlBuilder } from '../functions.js';
+import { findById } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -25,3 +26,71 @@ test('Test will pass when function output matches the outerHTML of the product',
     // Make assertions about what is expected versus the actual result
     expect.equal(html, expected);
 });
+
+
+//Test for findById
+test('This function will take inputs of an array and an id value and return the first object with matching id value, if no match is found it will return null', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const bat = {
+        id: 'bat',
+        name: 'Baseball Bat',
+        image: '../assets/bat.png',
+        category: 'Baseball',
+        description: '20oz Wooden Bat',
+        price: 50.00,
+    };
+    
+    const mitt = {
+        id: 'mitt',
+        name: 'Baseball Mitt',
+        image: '../assets/mitt.png',
+        category: 'Baseball',
+        description: 'Leather Outfielders Mitt',
+        price: 40.00,
+    };
+    
+    const catchersMask = {
+        id: 'catchersMask',
+        name: 'Catcher\'s Mask',
+        image: '../assets/mask.png',
+        category: 'Baseball',
+        description: 'Wire frame catchers mask',
+        price: 30.00,
+    };
+    
+    //Sample Array
+    const testArray = [bat, mitt, catchersMask];
+
+    const id = 'mitt'; 
+    
+    
+    const expected = {
+        id: 'mitt',
+        name: 'Baseball Mitt',
+        image: '../assets/mitt.png',
+        category: 'Baseball',
+        description: 'Leather Outfielders Mitt',
+        price: 40.00,
+    };
+
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    
+    const actual = findById(testArray, id);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+
+
+
+//Test for calcLintItem
+
+//Test for DOM Render Function
+
+//Test for calcOrderTotal
+
