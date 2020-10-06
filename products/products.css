@@ -123,6 +123,7 @@ header img {
 
 img {
     height: 100%;
+    justify-self: center;
 }
 
 content {
