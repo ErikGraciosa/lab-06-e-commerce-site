@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
+    <link rel="stylesheet" href="./products.css">
+    <title>Products</title>
 </head>
 
 <body>
@@ -25,27 +25,27 @@
             </h2>
 
             <content>
-                <div class="product">
-                    <img src="../assets/big-logo.png"/>
-                    <div class="product-middle">
-                        <div class="name">Name</div>
-                        <div class="categroy">Category</div>
-                        <div class="description">Description</div>
-                                            </div>
-                    <div class="product-right">
-                        <button>Add</button>
-                        <div class="price">$9.99</div>
-                    </div>                    
-                </div>
-                
-
+                <ul id="product-list">
+                    <li id="sample" class="product">
+                        <img src="../assets/bat.png"/>
+                        <div class="product-middle">
+                            <div class="name">Baseball Bat</div>
+                            <div class="category">Baseball</div>
+                            <div class="description">20oz Wooden Bat</div>
+                        </div>
+                        <div class="product-right">
+                            <button>Add</button>
+                            <div class="price">$50.00</div>
+                        </div>                    
+                    </li>                
+                </ul>
         </section>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="products.js"></script>
 </body>
 
 </html>
