@@ -63,7 +63,7 @@ test('This function will take inputs of an array and an id value and return the 
     const testArray = [bat, mitt, catchersMask];
 
     const id = 'mitt'; 
-    
+    const id2 = 'not here';
     
     const expected = {
         id: 'mitt',
@@ -73,16 +73,17 @@ test('This function will take inputs of an array and an id value and return the 
         description: 'Leather Outfielders Mitt',
         price: 40.00,
     };
-
+    const expected2 = null;
 
     //Act 
     // Call the function you're testing and set the result to a const
     
     const actual = findById(testArray, id);
-
+    const actual2 = findById(testArray, id2);
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
+    expect.deepEqual(actual2, expected2);
 });
 
 

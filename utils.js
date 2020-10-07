@@ -1,5 +1,5 @@
 export function findById(array, id) {
-    let objectFound = {};
+    let objectFound = null;
     for (let i = 0; i < array.length; i++) {
         if (array[i].id === id) {
             console.log(array[i]);
