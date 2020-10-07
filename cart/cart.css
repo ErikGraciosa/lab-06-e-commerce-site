@@ -23,6 +23,23 @@ table, tr, th, td, thead, tbody {
     font-weight: 700;
 }
 
+table {
+    width: 800px;
+}
+
+.image {
+    width: 200px;
+}
+
+td {
+    height: 150px;
+}
+
+img {
+    vertical-align: top;
+    margin: 5px;
+}
+
 main {
     display: flex;
     flex-direction: column;

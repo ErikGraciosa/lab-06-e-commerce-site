@@ -1,6 +1,7 @@
 // IMPORT MODULES under test here:
 import { productHtmlBuilder } from '../functions.js';
-import { findById } from '../utils.js';
+import { findById, calcLineItem } from '../utils.js';
+import { renderLineItems } from '../cart/render-line-items.js';
 
 const test = QUnit.test;
 
@@ -90,8 +91,58 @@ test('This function will take inputs of an array and an id value and return the 
 
 
 //Test for calcLintItem
+test('Test will take a quantity and a price and return the total to two decimal places', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 24.95;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    
+    const quantity = 5;
+    const price = 4.99;
+
+    const actual = calcLineItem(quantity, price);
+    
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
+
 
 //Test for DOM Render Function
+test('This function take a cart line item and the corresponding product and returns dom that matches the static html example.', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = '<tr><td class=""><img src="../assets/bat.png"></td><td class="">Hat</td><td class="">$10.00</td><td class="">2</td><td class="">$20.00</td></tr>';
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const cartLineItem = {
+        id: 'bat',
+        quantity: 7,
+    };
+    const product = {
+        id: 'bat',
+        name: 'Baseball Bat',
+        image: '../assets/bat.png',
+        category: 'Baseball',
+        description: '20oz Wooden Bat',
+        price: 50.00,
+    }; 
+ 
+    const actual = renderLineItems(cartLineItem, product);
+    const html = actual.outerHTML;
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(html, expected);
+});
+
+
+
+
 
 //Test for calcOrderTotal
 
