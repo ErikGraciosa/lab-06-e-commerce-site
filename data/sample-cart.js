@@ -6,7 +6,7 @@ export const cart = [
     },
     {
         id: 'hat',
-        quantity: 2,
+        quantity: 5,
     },
     {
         id: 'mitt',

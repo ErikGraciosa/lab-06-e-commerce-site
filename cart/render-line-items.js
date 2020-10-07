@@ -1,6 +1,4 @@
-
-
-
+import { calcLineItem } from '../utils.js'; //Input qty and price, get answer to 2 decimal places.
 
 export function renderLineItems(cartLineItem, product) {
     //Create tags    
@@ -22,21 +20,19 @@ export function renderLineItems(cartLineItem, product) {
     //Get product info
     const quantity = cartLineItem.quantity;
 
-
+    //Calculated subtotal for line
+    const subTotal = calcLineItem(quantity, product.price);
 
     //Add textContext
-    img.src = product.image; //image key needs to go here
+    img.src = product.image;
     tdName.textContent = product.name;
     tdPrice.textContent = `$${product.price.toFixed(2)}`;
-    tdQuantity.textContent = quantity;
-    const subTotal = quantity * product.price;
+    tdQuantity.textContent = quantity;    
     tdSubtotal.textContent = `$${subTotal.toFixed(2)}`;
 
     //Inject to the <tr>
     tr.append(tdImage, tdName, tdPrice, tdQuantity, tdSubtotal);
     tdImage.appendChild(img);
-    
-    
     
     return tr;
 }
