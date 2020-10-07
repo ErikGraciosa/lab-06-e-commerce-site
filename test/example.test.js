@@ -20,6 +20,8 @@ test('Test will pass when function output matches the outerHTML of the product',
         description: '20oz Wooden Bat',
         price: 50.00,
     };
+
+
     const actual = productHtmlBuilder(bat);
     const html = actual.outerHTML;
 
@@ -115,13 +117,13 @@ test('Test will take a quantity and a price and return the total to two decimal 
 test('This function take a cart line item and the corresponding product and returns dom that matches the static html example.', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = '<tr><td class=""><img src="../assets/bat.png"></td><td class="">Hat</td><td class="">$10.00</td><td class="">2</td><td class="">$20.00</td></tr>';
+    const expected = '<tr><td class=""><img src="../assets/bat.png"></td><td class="">Baseball Bat</td><td class="">$50.00</td><td class="">2</td><td class="">$100.00</td></tr>';
     
     //Act 
     // Call the function you're testing and set the result to a const
     const cartLineItem = {
         id: 'bat',
-        quantity: 7,
+        quantity: 2,
     };
     const product = {
         id: 'bat',
