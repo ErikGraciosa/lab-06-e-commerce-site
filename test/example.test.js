@@ -1,7 +1,9 @@
 // IMPORT MODULES under test here:
 import { productHtmlBuilder } from '../functions.js';
-import { findById, calcLineItem } from '../utils.js';
+import { findById, calcLineItem, calcOrderTotal } from '../utils.js';
 import { renderLineItems } from '../cart/render-line-items.js';
+import { inventory } from '../sportinggoods.js';
+import { cart } from '../data/sample-cart.js';
 
 const test = QUnit.test;
 
@@ -20,7 +22,6 @@ test('Test will pass when function output matches the outerHTML of the product',
         description: '20oz Wooden Bat',
         price: 50.00,
     };
-
 
     const actual = productHtmlBuilder(bat);
     const html = actual.outerHTML;
@@ -90,8 +91,6 @@ test('This function will take inputs of an array and an id value and return the 
 });
 
 
-
-
 //Test for calcLintItem
 test('Test will take a quantity and a price and return the total to two decimal places', (expect) => {
     //Arrange
@@ -143,8 +142,20 @@ test('This function take a cart line item and the corresponding product and retu
 });
 
 
-
-
-
 //Test for calcOrderTotal
-
+test('This function will take in the cart array and the product array and return the grand total of items in the cart', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 480;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const cartArray = cart;
+    const productArray = inventory;
+ 
+    const actual = calcOrderTotal(cartArray, productArray);
+    
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
