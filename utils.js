@@ -31,3 +31,17 @@ export function calcOrderTotal(cartArray, productsArray) {
     }
     return total;
 }
+
+export function getFromLocalStorage(key) {
+    // remember, we need to parse any values get from local storage
+    const savedData = localStorage.getItem(key);
+    const savedDataParsed = JSON.parse(savedData);
+    return savedDataParsed;
+}
+
+// this function will not return anything
+export function setInLocalStorage(key, value) {
+    // remember, we need to stringify any values we want to set into local storage
+    const dataAsString = JSON.stringify(value);    
+    localStorage.setItem(key, dataAsString);    
+}
