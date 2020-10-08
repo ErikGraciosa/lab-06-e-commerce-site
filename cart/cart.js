@@ -1,10 +1,15 @@
 import { renderLineItems } from './render-line-items.js';
 import { cart } from '../data/sample-cart.js';
 import { inventory } from '../sportinggoods.js';
-import { findById } from '../utils.js'; //input is array objects and id, returns object matching id 
+import { findById, calcOrderTotal } from '../utils.js'; //input is array objects and id, returns object matching id 
 
-//get tbody
+//get html elements
 const tbody = document.getElementById('cart-main');
+const tfoot = document.getElementById('cart-footer');
+const trow = document.createElement('tr');
+const tCost = document.createElement('td');
+const tWording = document.createElement('td');
+const tEmpty = document.createElement('td');
 
 //generate some html with the cart/inventory content match the cart id and inventory ids use find by id.
 //Start with cart.id to get the right id to look for in the inventory object
@@ -19,3 +24,15 @@ for (let i = 0; i < cart.length; i++) {
     const nextLineToRender = renderLineItems(cart[i], inventoryItem);
     tbody.appendChild(nextLineToRender);
 }
+
+//Show total
+const total = calcOrderTotal(cart, inventory);
+tCost.textContent = `$${total.toFixed(2)}`;
+tWording.textContent = 'The total is:';
+
+tCost.classList.add('total-cost');
+tWording.classList.add('total-wording');
+tEmpty.colSpan = 3;
+
+trow.append(tEmpty, tWording, tCost);
+tfoot.appendChild(trow);

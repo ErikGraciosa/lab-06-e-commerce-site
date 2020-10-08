@@ -23,10 +23,6 @@ table, tr, th, td, thead, tbody {
     font-weight: 700;
 }
 
-table {
-    width: 800px;
-}
-
 .image {
     width: 200px;
 }
@@ -47,7 +43,7 @@ main {
     align-items: center;
     margin-bottom: calc(var(--footer-height));
     background-color: var(--color2);
-    }
+}
 
 section {
     background-color: var(--color3);
@@ -91,7 +87,6 @@ footer {
     background-color: var(--color2);
     box-shadow: var(--shadow);
 }
-
 
 h2 {
     font-size: 1.8rem;
@@ -194,7 +189,7 @@ footer {
     box-shadow: var(--shadow);
 }
   
-  @keyframes pulse {
+@keyframes pulse {
     20% {
       transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
     }
