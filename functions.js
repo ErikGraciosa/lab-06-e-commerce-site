@@ -27,6 +27,7 @@ export function productHtmlBuilder(product) {
     divProductRight.classList.add('product-right');
     button.textContent = 'Add';
     divPrice.classList.add('price');
+    console.log(typeof product.price);
     divPrice.textContent = `$${product.price.toFixed(2)}`;
     
     //Appends
