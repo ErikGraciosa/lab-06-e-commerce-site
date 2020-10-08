@@ -1,6 +1,6 @@
 import { renderLineItems } from './render-line-items.js';
 import { inventory } from '../sportinggoods.js';
-import { findById, calcOrderTotal, getFromLocalStorage, setInLocalStorage } from '../utils.js'; //input is array objects and id, returns object matching id 
+import { findById, calcOrderTotal, getFromLocalStorage } from '../utils.js'; //input is array objects and id, returns object matching id 
 
 //get html elements
 const tbody = document.getElementById('cart-main');
