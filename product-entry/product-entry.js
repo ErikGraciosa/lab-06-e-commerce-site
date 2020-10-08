@@ -19,7 +19,7 @@ form.addEventListener('submit', (e) => {
 
     const id = newProduct.get('id');
     const name = newProduct.get('name');
-    const image = newProduct.get('image');
+    const image = '../assets/unavailable.png'; //newProduct.get('image');
     const category = newProduct.get('category');
     const description = newProduct.get('description');
     const price = newProduct.get('price');
@@ -27,4 +27,9 @@ form.addEventListener('submit', (e) => {
     const newProductAsObject = { id: id, name: name, image:image, category:category, description:description, price:parseInt(price) };
 
     addProduct(newProductAsObject);
+
+    const niceLookingNewProductAsObject = JSON.stringify(newProductAsObject, true, 2);
+    alert('The following item has been added: \n\r' + niceLookingNewProductAsObject);
+
+    form.reset();
 });
