@@ -1,4 +1,4 @@
-// import { inventory } from "./sportinggoods";
+import { inventory } from './sportinggoods.js';
 
 export function findById(array, id) {
     let objectFound = null;
@@ -44,4 +44,25 @@ export function setInLocalStorage(key, value) {
     // remember, we need to stringify any values we want to set into local storage
     const dataAsString = JSON.stringify(value);    
     localStorage.setItem(key, dataAsString);    
+}
+
+//Lab09 function, this might not work yet
+export function addProduct(newProductObject) {
+    //Retrieve the existing products array
+    
+    const currentProducts = getFromLocalStorage('theProducts') || [];
+
+    //Push the new product into the array
+    currentProducts.push(newProductObject);
+
+    //Re-save the products array into local Storage
+    setInLocalStorage('theProducts', currentProducts);
+}
+
+//This function will check if localStorage has 'theProducts' stored, if not initializes with inventory
+export function initializeProducts() {
+    const currentProducts = getFromLocalStorage('theProducts') || [];
+    if (currentProducts.length === 0) {
+        setInLocalStorage('theProducts', inventory);
+    }
 }
