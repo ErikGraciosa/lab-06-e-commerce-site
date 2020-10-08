@@ -22,7 +22,8 @@ const currentCart = getFromLocalStorage('theCart') || [];
 //loop through whatever is in the cart and render to page
 for (let i = 0; i < currentCart.length; i++) {
     const cartItem = currentCart[i].id;
-    const inventoryItem = findById(inventory, cartItem);
+    const dynamicCart = getFromLocalStorage('theProducts');
+    const inventoryItem = findById(dynamicCart, cartItem);
     const nextLineToRender = renderLineItems(currentCart[i], inventoryItem);
     tbody.appendChild(nextLineToRender);
 }
