@@ -1,5 +1,5 @@
 import { renderLineItems } from './render-line-items.js';
-import { inventory } from '../sportinggoods.js';
+//import { inventory } from '../sportinggoods.js';
 import { findById, calcOrderTotal, getFromLocalStorage } from '../utils.js'; //input is array objects and id, returns object matching id 
 
 //get html elements
@@ -28,8 +28,10 @@ for (let i = 0; i < currentCart.length; i++) {
     tbody.appendChild(nextLineToRender);
 }
 
+//Surprised that the for loop above this doesn't count as a global variable for dynamica cart.
+const dynamicCart = getFromLocalStorage('theProducts');
 //Show total
-const total = calcOrderTotal(currentCart, inventory);
+const total = calcOrderTotal(currentCart, dynamicCart);
 tCost.textContent = `$${total.toFixed(2)}`;
 tWording.textContent = 'The total is:';
 

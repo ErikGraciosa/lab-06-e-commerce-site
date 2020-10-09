@@ -1,4 +1,5 @@
-import { initializeProducts, addProduct } from '../utils.js';
+import { initializeProducts, addProduct, getFromLocalStorage } from '../utils.js';
+import { adminProductHtmlBuilder } from '../functions.js';
 
 initializeProducts();
 
@@ -32,4 +33,18 @@ form.addEventListener('submit', (e) => {
     alert('The following item has been added: \n\r' + niceLookingNewProductAsObject);
 
     form.reset();
+    location.reload();
 });
+
+
+//Copied over from products.js, should display exact same thing but in lower div tag
+const ul = document.getElementById('product-list');
+initializeProducts();
+
+//Build products
+const dynamicProducts = getFromLocalStorage('theProducts');
+
+for (let i = 0; i < dynamicProducts.length; i++) {
+    const productTag = adminProductHtmlBuilder(dynamicProducts[i]);
+    ul.appendChild(productTag);
+}

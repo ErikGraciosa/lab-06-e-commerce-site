@@ -160,6 +160,7 @@ test('This function will take in the cart array and the product array and return
     expect.equal(actual, expected);
 });
 
+
 //Test for addProduct
 test('This function will take in the new product and add the new product to the product list', (expect) => {
     //Arrange

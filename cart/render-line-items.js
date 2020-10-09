@@ -36,5 +36,3 @@ export function renderLineItems(cartLineItem, product) {
     
     return tr;
 }
-
-
