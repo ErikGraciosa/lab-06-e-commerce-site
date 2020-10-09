@@ -62,6 +62,19 @@ section {
     box-shadow: 5px 10px 8px black;
 }
 
+nav {
+    border: solid var(--color4) 10px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #002878;
+    color: var(--color4);
+    margin: 10px;
+}
+
+a {
+    color: var(--color4);
+}
+
 li, content {
     padding: 10px;
 }
@@ -91,6 +104,7 @@ footer {
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+    color: var(--color4);
 }
 
 .product {
