@@ -1,6 +1,6 @@
 import { renderLineItems } from './render-line-items.js';
-import { inventory } from '../sportinggoods.js';
-import { findById, calcOrderTotal, getFromLocalStorage, setInLocalStorage } from '../utils.js'; //input is array objects and id, returns object matching id 
+//import { inventory } from '../sportinggoods.js';
+import { findById, calcOrderTotal, getFromLocalStorage } from '../utils.js'; //input is array objects and id, returns object matching id 
 
 //get html elements
 const tbody = document.getElementById('cart-main');
@@ -22,13 +22,16 @@ const currentCart = getFromLocalStorage('theCart') || [];
 //loop through whatever is in the cart and render to page
 for (let i = 0; i < currentCart.length; i++) {
     const cartItem = currentCart[i].id;
-    const inventoryItem = findById(inventory, cartItem);
+    const dynamicCart = getFromLocalStorage('theProducts');
+    const inventoryItem = findById(dynamicCart, cartItem);
     const nextLineToRender = renderLineItems(currentCart[i], inventoryItem);
     tbody.appendChild(nextLineToRender);
 }
 
+//Surprised that the for loop above this doesn't count as a global variable for dynamica cart.
+const dynamicCart = getFromLocalStorage('theProducts');
 //Show total
-const total = calcOrderTotal(currentCart, inventory);
+const total = calcOrderTotal(currentCart, dynamicCart);
 tCost.textContent = `$${total.toFixed(2)}`;
 tWording.textContent = 'The total is:';
 

@@ -1,7 +1,7 @@
 
 body {
     --color1: #c4ced4;
-    --color2: #fff6dd;
+    --color2: #002878;
     --color3: #005c5c;
     --color4: #ffc528;
     --color5: #fff6dd;
@@ -16,26 +16,6 @@ body {
     background-color: var(--color2);
 }
 
-table, tr, th, td, thead, tbody {
-    border: solid black 1px;
-    background-color: var(--color5);
-    font-size: 18pt;
-    font-weight: 700;
-}
-
-.image {
-    width: 200px;
-}
-
-td {
-    height: 150px;
-}
-
-img {
-    vertical-align: top;
-    margin: 5px;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -43,10 +23,10 @@ main {
     align-items: center;
     margin-bottom: calc(var(--footer-height));
     background-color: var(--color2);
-}
+    }
 
-section {
-    background-color: var(--color3);
+form {
+    background-color: var(--color5);
     width: 1000px;
     max-width: 80%;
     display: flex;
@@ -57,18 +37,31 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 5px var(--color1);
-    border-radius: 5px;
+    border: solid 10px var(--color4);
+    border-radius: 20px;
     box-shadow: 5px 10px 8px black;
+}
+
+section {
+    background-color: var(--color2);
+    width: 1000px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--gutter);
+    padding-bottom: var(--gutter);
+    margin-top: var(--gutter);
+    margin-bottom: var(--gutter); 
 }
 
 nav {
     border: solid var(--color4) 10px;
     border-radius: 20px;
     padding: 10px;
-    background-color: #002878;
+    background-color: var(--color2);
     color: var(--color4);
-    margin: 10px;
 }
 
 a {
@@ -95,10 +88,17 @@ header {
 }
 
 footer {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     background-color: var(--color2);
     box-shadow: var(--shadow);
+}
+
+fieldset {
+    border: solid black 1px;
+    padding: 10px;
+    background-color: var(--color5);
+    font-weight: 700;
 }
 
 h2 {
@@ -145,7 +145,6 @@ button {
     height: 50%;
     border-radius: 5px;
     box-shadow: 5px 5px 10px black;
-    padding: 10px;
     margin: 10px;
 }
 
@@ -169,7 +168,7 @@ img {
 }
 
 /* Controlling widths of the list items */
-content {
+div, content {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -197,13 +196,13 @@ footer {
     width: 100%;
     bottom: 0;
     height: var(--footer-height);
-    display: flex;
+    display: none;
     justify-content: flex-end;
     background-color: var(--color2);
     box-shadow: var(--shadow);
 }
   
-@keyframes pulse {
+  @keyframes pulse {
     20% {
       transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
     }

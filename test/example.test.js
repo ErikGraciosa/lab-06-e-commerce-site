@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { productHtmlBuilder } from '../functions.js';
-import { findById, calcLineItem, calcOrderTotal } from '../utils.js';
+import { findById, calcLineItem, calcOrderTotal, addProduct, getFromLocalStorage, initializeProducts } from '../utils.js';
 import { renderLineItems } from '../cart/render-line-items.js';
 import { inventory } from '../sportinggoods.js';
 import { cart } from '../data/sample-cart.js';
@@ -158,4 +158,32 @@ test('This function will take in the cart array and the product array and return
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});
+
+
+//Test for addProduct
+test('This function will take in the new product and add the new product to the product list', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations, "inventory from sportinggoods.js"
+    const expected = {
+        id: 'card',
+        name: 'Ken Griffey Jr. Card',
+        image: '../assets/kgj-card.png',
+        category: 'Baseball',
+        description: 'Baseball Card',
+        price: 24.00,
+    };
+
+    initializeProducts();
+ 
+    //Act 
+    // Call the function you're testing and set the result to a const
+    addProduct(expected);
+
+    const newProductsArray = getFromLocalStorage('theProducts');
+    const actual = newProductsArray[(newProductsArray.length - 1)];
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
 });
