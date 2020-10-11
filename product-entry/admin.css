@@ -220,3 +220,12 @@ footer {
     }
 
   }
+
+  @keyframes background-fade-red {
+    0% {
+      background-color: red;
+    }
+    100% {
+      background-color: none;
+    }
+  }

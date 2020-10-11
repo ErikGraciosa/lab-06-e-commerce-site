@@ -199,3 +199,12 @@ footer {
     }
 
   }
+
+  @keyframes background-fade-green {
+    0% {
+      background-color: green;
+    }
+    100% {
+      background-color: none;
+    }
+  }

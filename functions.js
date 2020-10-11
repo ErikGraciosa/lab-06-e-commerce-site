@@ -43,6 +43,14 @@ export function productHtmlBuilder(product) {
 
     //Event Listener, cart builder
     button.addEventListener('click', () => {
+        //UX effects
+        li.setAttribute('style', 'animation: background-fade-green 0.2s;');
+        
+        li.addEventListener('animationend', () => {
+            li.setAttribute('style', '');
+        });
+
+        
         //get the cart or return default
         const currentCart = getFromLocalStorage('theCart') || [];
         
@@ -62,6 +70,7 @@ export function productHtmlBuilder(product) {
 
         //send back to the local storage
         setInLocalStorage('theCart', currentCart);
+        
     });
     return li;
 }
@@ -130,6 +139,13 @@ export function adminProductHtmlBuilder(product) {
 
     //Event Listener, product deleter
     button.addEventListener('click', () => {
+        //UX
+        li.setAttribute('style', 'animation: background-fade-red 0.2s;');
+            
+        li.addEventListener('animationend', () => {
+            li.setAttribute('style', '');
+        });
+
         removeProduct(product.name);
     });
     return li;
